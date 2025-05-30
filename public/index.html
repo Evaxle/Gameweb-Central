@@ -9,12 +9,12 @@
 </head>
 <body>
   <header><h1 id="pageTitle">GameWeb Central</h1></header><br>
-   <a href="https://gamewebv3.vercel.app" target="_blank" style="text-align: center; display: block; margin-bottom: 20px;">Click Here to Try GamewebV3</a>
    <div id="favoritesContainer"></div>
 
   <div class="container">
-    <div class="tab-container">
-      <button class="tab active" data-tab="proxies">Proxies</button>
+    <div class="tab-container"> 
+      <button class="tab active" data-tab="main">Main Page</button>
+      <button class="tab" data-tab="proxies">Proxies</button>
       <button class="tab" data-tab="games">Games</button>
       <button class="tab" data-tab="tools">Tools</button>
       <button class="tab" data-tab="emulators">Emulators</button>
@@ -22,8 +22,12 @@
       <button class="tab" data-tab="customButtons">Custom Buttons</button>
       <button class="tab" data-tab="settings">Settings</button>
     </div>
-
-    <div id="proxies" class="content active">
+    
+    <div id="mainpage" class="content active">
+      <h2>Welcome to GameWeb Central</h2>
+      <p></p>
+    </div>
+    <div id="proxies" class="content">
       <h2>Proxies</h2>
       <div class="grid-container" id="proxyList"></div>
     </div>
