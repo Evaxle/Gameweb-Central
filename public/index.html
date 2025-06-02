@@ -13,7 +13,7 @@
 
   <div class="container">
     <div class="tab-container"> 
-      <button class="tab active" data-tab="main">Main Page</button>
+      <button class="tab active" data-tab="mainpage">Main Page</button>
       <button class="tab" data-tab="proxies">Proxies</button>
       <button class="tab" data-tab="games">Games</button>
       <button class="tab" data-tab="tools">Tools</button>
@@ -24,9 +24,48 @@
     </div>
     
     <div id="mainpage" class="content active">
-      <h2>Welcome to GameWeb Central</h2>
-      <p></p>
+  <h2>Welcome to GameWeb Central</h2>
+  <p>Your place for tools, games, and updates.</p>
+
+  <h3>Latest Updates</h3>
+  <ul>
+    <li>June 1: Way better styling for the page</li>
+  </ul>
+
+  <h3>Featured Items</h3>
+  <div class="featured-grid">
+    <div>
+      <h4>Proxy</h4>
+      <p>About blank aint work just open this in a new tab</p>
+      <a href="https://math1studygroup.koyeb.app/">Interstellar</a>
     </div>
+    <div>
+      <h4>Games</h4>
+      <p>Currently None</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+       <button onclick="openfeatured('https://extprint3r.github.io/')">ExtPrint</button>
+    </div>
+    <div>
+      <h4>Apps</h4>
+             <button onclick="openfeatured('https://novastream.top/')">Nova(Movies</button>
+    </div>
+  </div>
+<script>
+function openfeatured(url) {
+  const newTab = window.open("about:blank", "_blank");
+  if (!newTab) return;
+  const doc = newTab.document;
+  doc.open();
+  doc.write(`<!DOCTYPE html><html><head><title>${url}</title><style>body,html{margin:0;padding:0;height:100%;}iframe{border:none;width:100vw;height:100vh;}</style></head><body><iframe src="${url}" allowfullscreen></iframe></body></html>`);
+  doc.close();
+}
+</script>
+  <h3>Community</h3>
+  <p>Join us on <a href="#">Forums</a> or <a href="#">Discord</a></p>
+</div>
+
     <div id="proxies" class="content">
       <h2>Proxies</h2>
       <div class="grid-container" id="proxyList"></div>
@@ -115,3 +154,72 @@
     }
   }
 </script>
+<style>
+#mainpage {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #121212;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', sans-serif;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+#mainpage h2 {
+  font-size: 2rem;
+  color: #00ffd5;
+  margin-bottom: 10px;
+}
+#mainpage h3 {
+  font-size: 1.4rem;
+  margin-top: 30px;
+  color: #ff9f1c;
+  border-bottom: 2px solid #ff9f1c;
+  padding-bottom: 5px;
+}
+#mainpage h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #00d4ff;
+}
+#mainpage p {
+  margin: 5px 0 10px 0;
+  font-size: 0.95rem;
+}
+#mainpage ul {
+  list-style: none;
+  padding: 0;
+}
+#mainpage ul li {
+  margin: 6px 0;
+  padding: 6px 10px;
+  background: #1e1e1e;
+  border-radius: 8px;
+}
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+.featured-grid div {
+  background: #1c1c1c;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.featured-grid div:hover {
+  transform: scale(1.03);
+  background: #252525;
+}
+a {
+  color: #00ffd5;
+  text-decoration: none;
+  border-bottom: 1px dashed #00ffd5;
+}
+a:hover {
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+</style>
